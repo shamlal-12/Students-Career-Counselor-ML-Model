@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #b9c3cd;
+            color: #ECF0F1;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #0a0442;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: #0fc257;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            color: #114ede;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #3c556d;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #eaf4f2;
+            text-align: center;
+        }
+
+        .list-group-item {
+            background-color: #2C3E50;
+            border: 1px solid #34495E;
+            color: #ECF0F1;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .list-group-item:hover {
+            background-color: #040b2c;
+            color: #1fb160;
+        }
+
+        .probability {
+            font-weight: bold;
+            color: #b09a74;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="home.html">Back to Home Page</a>
+    </nav>
+
+    <div class="container">
+        <h1>Top Recommended Fields with Probabilities</h1>
+        <ul class="list-group">
+            {% for recommendation in recommendations %}
+                <li class="list-group-item">
+                    {{ recommendation[0] }} <span class="probability">with probability {{ recommendation[1] }}%</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
